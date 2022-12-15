@@ -15,4 +15,10 @@ class NewsStory(models.Model):
     image_url = models.URLField(blank=True)
     # favourites = models.ManyToManyField(get_user_model(), related_name='favourite', default=None, blank=True)
 
+    class Meta:
+        ordering = ('pub_date',)
+
+    def __str__(self):
+        return self.title
+
     
