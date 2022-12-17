@@ -2,5 +2,8 @@
 
 {% block content %}
 <h2>Welcome, {{ user.username|capfirst }}</h2>
+<p>Name: {{ user.name|capfirst }}</p>
+<p>Username: {{ user.username|capfirst }}</p>
 <p>Email: {{ user.email }}</p>
+<button>Edit Account</button><button>Delete Account</button>
 {% endblock %}

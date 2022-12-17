@@ -34,12 +34,13 @@ class AddStoryView(generic.CreateView):
 
 # Add view for editing/updating a news story
 class UpdateStoryView(UpdateView):
-    model: StoryForm
+    form_class = StoryForm
+    model = NewsStory
     template_name = 'news/updateStory.html'
     success_url = reverse_lazy('news:index')
 
 # Add view for deleting a news story
 class DeleteStoryView(DeleteView):
-    model: StoryForm
+    model = NewsStory
     template_name = 'news/deleteStory.html'
     success_url = reverse_lazy('news:index')

@@ -6,11 +6,13 @@
 {% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="submit">
 </form>
-
+{% else %}
+<p class="authentication_error">You are not logged in!</p>
+{% endif %}
 {% endblock %}

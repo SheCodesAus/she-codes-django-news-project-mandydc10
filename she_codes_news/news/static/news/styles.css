@@ -32,6 +32,19 @@ input[type=submit] {
     text-transform: uppercase;
 }
 
+.small {
+    width:10px;
+}
+
+.small_img {
+    border-radius: 5%;
+    margin-left: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
 .story-card {
     margin: 2px;
     border: 1px solid #000;

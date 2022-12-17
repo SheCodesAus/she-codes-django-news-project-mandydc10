@@ -3,6 +3,6 @@ from django.contrib import admin
 from . import models
 
 class AuthorAdmin(admin.ModelAdmin):
-    display_list = ('title', 'author')
+    list_display = ('title', 'author', 'pub_date')
 
 admin.site.register(models.NewsStory, AuthorAdmin)
