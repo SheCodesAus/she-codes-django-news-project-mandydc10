@@ -19,7 +19,7 @@
                     {% endfor %}
                 </select>
             </datalist>
-            <input type="submit">
+            <input type="submit" value="Search">
         </p>
     </form>
 
@@ -28,7 +28,7 @@
         <h2><a href="{% url 'users:profile' request.GET.author %}">{{ request.GET.author|capfirst }}'s Stories</a></h2> 
         {% if author_stories %}
             {% for story in author_stories %}
-            <li><a href="{% url 'news:story' story.id %}">{{ story.title }} - </a>{{ story.pub_date }}</li>
+            <li><a href="{% url 'news:story' story.id %}">{{ story.title }}</a><em>{{ story.pub_date| date:"M d Y" }}</em></li>
             {% endfor %}
         {% else %}
             <p>There are no stories by this author</p>           
@@ -37,7 +37,7 @@
         <h2>All Stories</h2>
         <em>Select an author to filter stories</em>
         {% for story in all_stories %}
-            <li><a href="{% url 'news:story' story.id %}">{{ story.title }}, {{ story.author.username }} ({{ story.pub_date }})</a> </li>
+            <li><a href="{% url 'news:story' story.id %}">{{ story.title }}</a><em>by {{ story.author.username|capfirst }}, {{ story.pub_date| date:"M d Y" }}</em></li>
         {% endfor %}        
     {% endif %}        
     </ul>
