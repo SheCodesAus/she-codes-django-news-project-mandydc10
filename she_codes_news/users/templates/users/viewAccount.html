@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
 <h2>Welcome, {{ user.username|capfirst }}</h2>
 <p>Name: {{ user.name|capfirst }}</p>
 <p>Username: {{ user.username|capfirst }}</p>

@@ -7,16 +7,17 @@
 
 {% block content %}
 {% if request.user.is_authenticated %}
-    {% if request.user == story.author %}
-<div class="form">
-    <form action="" method="post">
-    
-        
-    </form>
-</div>
-    {% else %}
-    <h2>Only the author of this story can make changes.</h2> 
-    <a href="{% url 'login' %}">Log in here!</a>
-    {% endif %}
+    <div class="form">
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>
+            Update Story
+        </button>
+        </form>
+    </div>
+{% else %}
+<h2>Only the author of this story can make changes.</h2> 
+<a href="{% url 'login' %}">Log in here!</a>
 {% endif %}
 {% endblock %}
