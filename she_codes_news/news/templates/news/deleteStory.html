@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <h2>Are you sure you wish to delete your story?</h2>
+    <p>"{{ newsstory.title }}" will be permanently deleted.</p>
+    <p>This action cannot be undone!</p>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <button>
+                Delete Story
+            </button>
+        </form>
+    </div>
+    {% else %}
+    <h2>Only the author of this story can delete this story.</h2> 
+    <a href="{% url 'login' %}">Log in here!</a>
+{% endif %}
+{% endblock %}

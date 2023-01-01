@@ -2,6 +2,7 @@
 
 body {
     background-color: rgb(240, 239, 239);
+    font-family: "bebas-neue-by-fontfabric", Sans-serif;
 }
 
 header {
@@ -9,21 +10,25 @@ header {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    background-color: #8246af;
+    padding: 50px 10px;
 }
 
-img {
+/* img {
     filter: grayscale(100%);
-}
+} */
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    /* font-family: 'Montserrat Subrayada', sans-serif; */
+    font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
-h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+h2, h2 a {
+   /* font-family: 'Montserrat Subrayada', sans-serif;  */
+   font-family: 'Bebas Neue', cursive;
 }
 
 h3 {
@@ -43,12 +48,17 @@ nav {
     align-items: flex-end;
 }
 
+header a {
+    color: white;
+}
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: black;
+    padding: 3px 10px;
 }
 
-a, p {
-    font-family: monospace;
+a, p, li {
+    font-family: raleway;
 }
+
