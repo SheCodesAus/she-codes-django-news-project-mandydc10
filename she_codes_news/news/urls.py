@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('<int:pk>', views.StoryView.as_view(), name='story'),
     path('add-story/', views.AddStoryView.as_view(), name='newStory'),
-    path('<int:pk>/edit-story/', views.UpdateStoryView.as_view(), name='updateStory'),
-    path('<int:pk>/delete-story/', views.DeleteStoryView.as_view(), name='deleteStory')
+    path('edit-story/<int:pk>', views.UpdateStoryView.as_view(), name='updateStory'),
+    path('delete-story/<int:pk>', views.DeleteStoryView.as_view(), name='deleteStory'),
+    path('author-search/', views.searchAuthor.as_view(), name='authorSearch'),
 ]

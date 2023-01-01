@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views import generic
 from .models import CustomUser
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 # from news.models import NewsStory
 
 # @ login_required
@@ -20,7 +20,21 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
+    def form_valid(self,form):
+        f=super().form_valid(form)
+        user = self.get_object
+        login(self.request, user)
+        return f
+
 class ViewAccount(generic.DetailView):
     model = CustomUser
     success_url = reverse_lazy('login')
     template_name = 'users/viewAccount.html'
+    context_object_name = 'profile'
+
+class UpdateAccount(UpdateView):
+    form_class = CustomUserChangeForm
+    model = CustomUser
+    success_url = reverse_lazy('login')
+    template_name = 'users/createAccount.html'
+    context_object_name = 'update-account'

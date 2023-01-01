@@ -6,11 +6,14 @@
 {% endblock %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
+    {% if request.user == story.author %}
 <div class="form">
     <form action="" method="post">
     
         
     </form>
 </div>
-
+{% else %}
+    <p>Only the author of this story can make changes. <span><a href="users/registration/login.html">Log in here</a></span> to edit your story!</p>
 {% endblock %}

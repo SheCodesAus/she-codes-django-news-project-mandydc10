@@ -2,6 +2,7 @@
 
 body {
     background-color: rgb(240, 239, 239);
+    font-family: "bebas-neue-by-fontfabric", Sans-serif;
 }
 
 header {
@@ -25,7 +26,7 @@ h1 {
     margin: 0;
 }
 
-h2 {
+h2, h2 a {
    /* font-family: 'Montserrat Subrayada', sans-serif;  */
    font-family: 'Bebas Neue', cursive;
 }
@@ -57,7 +58,7 @@ a {
     padding: 3px 10px;
 }
 
-a, p {
+a, p, li {
     font-family: raleway;
 }
 
